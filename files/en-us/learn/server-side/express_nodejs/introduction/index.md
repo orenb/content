@@ -339,7 +339,7 @@ app.use(logger("dev"));
 
 You can write your own middleware functions, and you are likely to have to do so (if only to create error handling code). The **only** difference between a middleware function and a route handler callback is that middleware functions have a third argument `next`, which middleware functions are expected to call if they are not that which completes the request cycle (when the middleware function is called, this contains the _next_ function that must be called).
 
-You can add a middleware function to the processing chain for _all responses_ with `app.use()`, or for a specific HTTP verb using the associated method: `app.get()`, `app.post()`, etc. Routes are specified in the same way for both cases, though the route is optional when calling `app.use()`.
+You can add a middleware function to the processing chain for _all responses_ with `app.all()`, or for a specific HTTP verb using the associated method: `app.get()`, `app.post()`, etc. Routes are specified in the same way for both cases, though the route is optional when calling `app.use()`.
 
 The example below shows how you can add the middleware function using both approaches, and with/without a route.
 
